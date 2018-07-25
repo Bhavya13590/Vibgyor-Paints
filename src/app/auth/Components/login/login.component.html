@@ -1,0 +1,58 @@
+<div class="container">
+    <form [formGroup] ="loginForm" action="/action_page.php">
+      <div class="row">
+        <h2 style="text-align:center">Login with Social Media or Manually</h2>
+        <div class="vl">
+          <span class="vl-innertext">or</span>
+        </div>
+  
+        <div class="col">
+          <button class="fb btn" (click)="signInWithFB()">
+            <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+           </button>
+          <!-- <a href="#" class="twitter btn">
+            <i class="fa fa-twitter fa-fw"></i> Login with Twitter
+          </a> -->
+          <button class="google btn" (click)="signInWithGoogle()"><i class="fa fa-google fa-fw">
+            </i> Login with Google+
+          </button>
+        </div>
+  
+        <div class="col">
+          <div class="hide-md-lg">
+            <p>Or sign in manually:</p>
+          </div>
+  
+          <input matInput placeholder="Username or email"  class="form-control" formControlName="username" ><br>
+        <mat-error *ngIf="loginForm.get('username').touched">
+            <div *ngIf="loginForm.controls['username'].hasError('required')" class="alert alert-danger">
+            User name is required
+            </div>
+        </mat-error>
+            
+        <input matInput type="password" placeholder="Password" class="form-control" formControlName="password" ><br>
+        <mat-error *ngIf="loginForm.get('password').touched">
+            <div *ngIf="loginForm.controls['password'].hasError('required')" class="alert alert-danger">
+            Password is required
+            </div>
+        </mat-error>
+          <!-- <input type="submit" value="Login"> -->
+          <button id="login"  mat-button (click)="login()"> Login </button>
+        </div>
+        
+      </div>
+
+    </form>
+  </div>
+  
+  <div class="bottom-container">
+    <div class="row">
+      <div class="col">
+        <a routerLink="register" style="color:white" class="btn">Sign up</a>
+      </div>
+      <div class="col">
+        <a href="#" style="color:white" class="btn">Forgot Password</a>
+      </div>
+    </div>
+  </div>
+  
