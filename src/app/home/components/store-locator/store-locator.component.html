@@ -1,0 +1,21 @@
+<div class="container">
+<div class="block">
+ <label>Choose a city:</label>
+ <input type="text" class="form-control" placeholder="City" [formControl]="cityControl" name="city" required [matAutocomplete]="autoCity">
+ <mat-autocomplete #autoCity="matAutocomplete">
+   <mat-option *ngFor="let city of filteredOptions | async" [value]="city">
+     {{ city}}
+   </mat-option>
+ </mat-autocomplete>
+</div>
+<div *ngFor = "let store of add">
+  <mat-card>
+      <p>{{ store.flatNo }}
+      {{ store.street }}</p>
+      <p>{{ store.state }},
+      {{ store.city }},
+      {{ store.pin }}</p>
+  </mat-card>
+
+  </div>
+</div>

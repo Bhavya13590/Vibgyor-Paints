@@ -1,0 +1,47 @@
+mat-card{
+    width : auto;
+    height: fit-content;
+    margin: 5px;
+    box-sizing: border-box;
+   }
+
+img{
+       width: 80%;
+       height: 120px;
+}
+   
+.sidenav {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 10;
+    left: 0;
+    background-color: rgba(128, 0, 0, 0);
+    overflow-x: hidden;
+
+
+}
+   .disp{
+    display:table-cell;
+}
+    
+.row{
+width: 100%;
+margin: 20px;
+display: table;
+}
+
+#cart{
+    background-color: green;
+}
+
+.search-results {
+    height: 20rem;
+    overflow: scroll;
+}
+
+.container{
+    min-height: 400px;
+}
+
+   

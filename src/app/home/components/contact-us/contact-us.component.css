@@ -1,0 +1,13 @@
+.container{
+    padding-left: 15px;
+}
+
+.glyphicon.glyphicon-earphone{
+ font-size: 25px;
+ font-style: italic;
+ font-weight: bold;
+}
+mat-card{
+    width: 40%;
+    margin: 5px;
+}

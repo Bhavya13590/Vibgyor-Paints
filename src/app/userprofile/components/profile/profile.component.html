@@ -1,0 +1,58 @@
+<div class="container1">
+    <div>
+      <h5> Update your profile </h5>
+    </div>
+    <mat-horizontal-stepper [linear]="true" #stepper>
+      <mat-step [stepControl]="profileForm">
+        <ng-template matStepLabel>Fill your personal details</ng-template>
+        <form class="form-horizontal" [formGroup]="profileForm" style="width:50%; text-align:'center';">
+          <div class="form-group">
+            <input matInput readonly placeholder="Name" class="form-control" #name formControlName="name" required>
+            <mat-error *ngIf="profileForm.get('name').touched">
+              <div *ngIf="profileForm.controls['name'].hasError('required')" class="alert alert-danger">
+                Name is required
+              </div>
+            </mat-error>
+          </div>
+          <div class="form-group">
+            <input matInput readonly placeholder="Username" class="form-control" formControlName="username" required>
+            <div *ngIf="profileForm.controls['username'].touched && !profileForm.controls['username'].valid"  class="alert alert-danger">
+              <div class="error"  *ngIf="profileForm.controls['username'].hasError('required') ">
+                Username is required
+          </div>
+          
+  </div>
+  </div>
+  <div class="form-group">
+    <input matInput placeholder="Mobile Number" class="form-control" maxlength="10" formControlName="mobileNo" >
+    <div *ngIf="profileForm.controls['mobileNo'].touched && !profileForm.controls['mobileNo'].valid"  class="alert alert-danger">
+      <div class="error"  *ngIf="profileForm.controls['mobileNo'].hasError('required') ">
+        Mobile number is required
+  </div>
+  <div *ngIf="profileForm.controls['mobileNo'].errors ">
+    Format error
+    </div>
+    </div>
+    </div>
+    <div>
+      <button mat-raised-button matStepperNext color="accent" (click)="next(1)" [disabled]="!profileForm.valid">Next</button>
+    </div>
+  
+    </form>
+    </mat-step>
+  
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup" style="margin : left;">
+        <ng-template matStepLabel>Fill out your address</ng-template>
+        <div>
+          <app-address #address></app-address>
+        </div>
+        <br>
+        <div>
+          <button mat-raised-button color="accent" (click)="next(2)" #saveButton>Submit</button>
+        </div>
+  
+      </form>
+    </mat-step>
+    </mat-horizontal-stepper>
+    </div>

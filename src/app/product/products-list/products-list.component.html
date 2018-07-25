@@ -1,0 +1,23 @@
+<div class="container">
+  <div *ngFor="let x of filterItems"  class="col-md-1">
+    <input type="checkbox"  [value]="x"  (change)="checked($event)"  /> {{x}} 
+</div>
+
+<div class="row">
+  <div class="col-md-10">
+    <div infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="10" (scrolled)="onScroll()">
+
+      <div class="col-md-4"  *ngFor="let x of productList | filter: types">
+        <mat-card>
+          <img src={{x.image}}>
+          <p style="font-weight:bold"> {{ x.name }}</p>
+          <p style="font-weight:bold">
+            <i class="fa fa-inr" style="font-size:14px"></i> {{x.price}} &nbsp;&nbsp;
+            <button id="cart" (click)="addProductsToCart(x)">+cart</button>
+          </p>
+        </mat-card>
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>

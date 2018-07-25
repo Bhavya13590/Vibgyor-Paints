@@ -1,0 +1,12 @@
+<div class="container">
+  <h2 style="text-align:center; width: 100%"> Your order history</h2>
+    <p-accordion *ngFor="let order of orderDetails"  >
+      <p-accordionTab header="Order - {{order.id}}">
+        <!-- <p>#Order number : {{order.id}}</p>  -->
+        <div *ngFor="let product of order.item">
+          {{product.name}} - {{product.quantity}} items - price :{{product.quantity * product.amount}}
+          </div>
+      </p-accordionTab>
+    </p-accordion>
+</div>
+

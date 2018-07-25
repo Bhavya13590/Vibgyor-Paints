@@ -1,0 +1,45 @@
+<div class="container">
+<mat-card>
+  <form [formGroup]='consultant' #bookForm="ngForm" >
+    <div class="form-group">
+      <input matInput class="form-control" type='text' placeholder="Name" formControlName="name" required>
+      <div *ngIf="consultant.controls['name'].touched && !consultant.controls['name'].valid" class="alert alert-danger">
+        <div class="error" *ngIf="consultant.controls['name'].hasError('required') ">
+          Name is required
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input matInput class="form-control" type="email" placeholder="Email" formControlName="email" required>
+      <div *ngIf="consultant.controls['email'].touched && !consultant.controls['email'].valid" class="alert alert-danger">
+          <div  *ngIf="consultant.controls['email'].hasError('required') ">
+            Email is required
+          </div>
+          <div  *ngIf="consultant.controls['email'].errors ">
+              Email ID is invalid
+            </div>
+          </div>
+
+    </div>
+
+    <div class="form-group">
+      <input matInput class="form-control" type="text" placeholder="Contact No" maxlength="10" formControlName="contact" required>
+      <div *ngIf="consultant.controls['contact'].touched && !consultant.controls['contact'].valid" class="alert alert-danger">
+          <div class="error" *ngIf="consultant.controls['contact'].hasError('required') ">
+            Contact Number is required
+          </div>
+          <div  *ngIf="consultant.controls['contact'].errors ">
+              Numbers Only
+            </div>
+        </div>
+    </div>
+
+    <app-address #address></app-address>
+
+    <!-- <button mat-button type="submit" (click)="bookAConsultant()">Book A consultant</button> -->
+    <button mat-button type="submit" (click)="bookAConsultant()" >Book A consultant</button>
+
+  </form>
+</mat-card>
+</div>

@@ -1,0 +1,63 @@
+
+  <!-- <form> -->
+    <div class="form-group">
+      
+        <input type="text" class="form-control" placeholder="Flat/H.No" [(ngModel)]="hNo" name="hNo" #houseNo="ngModel" required>
+        <div *ngIf="houseNo.invalid && (houseNo.dirty || houseNo.touched)" class="alert alert-danger">
+
+            <div *ngIf="houseNo.errors.required">
+              Flat/House Number is required.
+            </div>
+            </div>
+     
+
+      </div>
+
+      <div class="form-group">
+          <input type="text" class="form-control" placeholder="Street" [(ngModel)]="street" name="street" #Streetref="ngModel" required>
+          <div *ngIf="Streetref.invalid && (Streetref.dirty || Streetref.touched)" class="alert alert-danger">
+
+              <div *ngIf="Streetref.errors.required">
+                Street is required.
+              </div>
+              </div>
+        
+      </div>
+
+      <div class="form-group">
+        
+          <input type="text" class="form-control" placeholder="State" [(formControl)]="state" name="state" #stateRef   required [matAutocomplete]="auto">
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let state of stateGroupOptions | async" [value]="state">
+              {{ state}}
+            </mat-option>
+            
+          </mat-autocomplete>
+
+       
+      </div>
+
+      <div class="form-group">
+        
+          <input type="text" class="form-control" placeholder="City" [(formControl)]="city" name="city" required [matAutocomplete]="autoCity">
+          <mat-autocomplete #autoCity="matAutocomplete">
+            <mat-option *ngFor="let city of cities | async" [value]="city">
+              {{ city}}
+            </mat-option>
+          </mat-autocomplete>
+          
+       
+      </div>
+
+      <div class="form-group">
+       
+          <input type="text" class="form-control" placeholder="PinCode" [(ngModel)]="pin" name="pin" #code="ngModel" required>
+          <div *ngIf="code.invalid && (code.dirty || code.touched)" class="alert alert-danger">
+
+              <div *ngIf="code.errors.required">
+                Pincode is required.
+              </div>
+              </div>
+        
+      </div>
+  <!-- </form> -->

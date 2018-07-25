@@ -1,0 +1,13 @@
+input{
+    width: 30%;
+}
+
+.block{
+    padding-left: 30px;
+}
+
+mat-card{
+    padding-left: 30px;
+    width: 40%;
+    margin: 5px;
+}
