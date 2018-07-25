@@ -1,0 +1,39 @@
+<div class="container">
+  <button (click)="addCatalogue()">Add Catalogue</button>
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort="sort">
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Catalogue </th>
+        <td mat-cell *matCellDef="let row"> {{row.type}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="image">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Image </th>
+        <td mat-cell *matCellDef="let row"> {{row.image}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Delete">
+        &nbsp;
+        <th mat-header-cell *matHeaderCellDef > Delete </th>
+        &nbsp;
+        <td mat-cell *matCellDef="let row">
+          <a (click)="deleteCatalogue(row)">
+            <i class="fa fa-trash" style="font-size:18px;color:red"></i>
+          </a>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+      </tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+
+    <div mat-dialog-content>
+        <mat-card id="est">
+
+  <form [formGroup]='productEdit' #prodForm="ngForm" >
+
+      <mat-select class="form-control" placeholder="Catalogue Type" formControlName="catType">
+          <mat-option *ngFor="let cat of catalogue" [value]="cat">{{cat}}</mat-option>
+          </mat-select>
+
+          <input matInput placeholder="Image src"  class="form-control" formControlName="image" ><br>
+    <mat-error *ngIf="productEdit.get('image').touched">
+        <div *ngIf="productEdit.controls['image'].hasError('required')" class="alert alert-danger">
+        Image Source is required
+        </div>
+    </mat-error>
+
+      <input matInput placeholder="Product Name"  class="form-control" formControlName="name" ><br>
+      <mat-error *ngIf="productEdit.get('name').touched">
+          <div *ngIf="productEdit.controls['name'].hasError('required')" class="alert alert-danger">
+          Product name is required
+          </div>
+      </mat-error>
+    
+        <input matInput placeholder="Price"  class="form-control" formControlName="price" ><br>
+        <mat-error *ngIf="productEdit.get('price').touched">
+            <div *ngIf="productEdit.controls['price'].hasError('required')" class="alert alert-danger">
+            Price is required
+            </div>
+        </mat-error>
+
+        <textarea matInput placeholder="  Description" class="form-control" formControlName="description" ></textarea><br>
+        <mat-error *ngIf="productEdit.get('description').touched">
+            <div *ngIf="productEdit.controls['description'].hasError('required')" class="alert alert-danger">
+            Description is required
+            </div>
+        </mat-error>
+
+        <textarea matInput placeholder="  More Info" class="form-control" formControlName="moreInfo" ></textarea><br>
+        <mat-error *ngIf="productEdit.get('moreInfo').touched">
+            <div *ngIf="productEdit.controls['moreInfo'].hasError('required')" class="alert alert-danger">
+            More Information is required
+            </div>
+        </mat-error>
+          
+        
+
+    <button mat-button [disabled]="!prodForm.form.valid" type="submit" (click)="saveChanges()" >Save</button>
+
+  </form>
+</mat-card>
+
+
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">close</button>
+   
+  </div>

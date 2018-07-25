@@ -1,0 +1,14 @@
+
+    <!-- <div  class="col-md-6" >
+        <canvas baseChart [data]="doughnutChartdetails" [labels]="filterItems" [chartType]="doughnutChartType" [colors]="pieChartColor"
+            (chartClick)="doughnutChartClicked($event)"></canvas>
+    </div> -->
+    <div class="col-md-6">
+        <canvas baseChart [data]="barChartdetails" [options]="barChartOptions" [labels]="roles" [chartType]="barChartType" [colors]="pieChartColor"
+            (chartClick)="barChartClicked($event)" ></canvas>
+    </div>
+    <div   class="col-md-6">
+        <canvas baseChart [data]="doughnutChartdetails" [labels]="filterItems" [chartType]="pieChartType" [colors]="pieChartColor"
+            (chartClick)="pieChartClicked($event)"></canvas>
+    </div>
+

@@ -1,0 +1,28 @@
+<div mat-dialog-content>
+    <mat-card id="est">
+
+<form [formGroup]='cityListForm' #cityForm="ngForm" >
+
+  <input matInput placeholder="City"  class="form-control" formControlName="city" ><br>
+  <mat-error *ngIf="cityListForm.get('city').touched">
+      <div *ngIf="cityListForm.controls['city'].hasError('required')" class="alert alert-danger">
+      City Name is required
+      </div>
+  </mat-error>
+
+    <input matInput placeholder="State"  class="form-control" formControlName="state" ><br>
+    <mat-error *ngIf="cityListForm.get('state').touched">
+        <div *ngIf="cityListForm.controls['state'].hasError('required')" class="alert alert-danger">
+        State is required
+        </div>
+    </mat-error>
+    <button mat-button [disabled]="!cityForm.form.valid" type="submit" (click)="saveChanges()" >Save</button>
+
+  </form>
+</mat-card>
+
+
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">close</button>
+   
+  </div>

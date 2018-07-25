@@ -1,0 +1,52 @@
+
+    <div mat-dialog-content>
+        <mat-card id="est">
+
+  <form [formGroup]='editStore' #storeForm="ngForm" >
+
+      <input matInput placeholder="Flat No"  class="form-control" formControlName="flat" ><br>
+      <mat-error *ngIf="editStore.get('flat').touched">
+          <div *ngIf="editStore.controls['flat'].hasError('required')" class="alert alert-danger">
+          Flat No is required
+          </div>
+      </mat-error>
+    
+        <input matInput placeholder="Street"  class="form-control" formControlName="street" ><br>
+        <mat-error *ngIf="editStore.get('street').touched">
+            <div *ngIf="editStore.controls['street'].hasError('required')" class="alert alert-danger">
+           Street is required
+            </div>
+        </mat-error>
+
+        <input matInput placeholder="State" class="form-control" formControlName="state" ><br>
+        <mat-error *ngIf="editStore.get('state').touched">
+            <div *ngIf="editStore.controls['state'].hasError('required')" class="alert alert-danger">
+           State is required
+            </div>
+        </mat-error>
+
+        <input matInput placeholder="City" class="form-control" formControlName="city" ><br>
+        <mat-error *ngIf="editStore.get('city').touched">
+            <div *ngIf="editStore.controls['city'].hasError('required')" class="alert alert-danger">
+           City is required
+            </div>
+        </mat-error>
+
+        <input matInput placeholder="Pin" class="form-control" formControlName="pin" ><br>
+        <mat-error *ngIf="editStore.get('pin').touched">
+            <div *ngIf="editStore.controls['pin'].hasError('required')" class="alert alert-danger">
+           City is required
+            </div>
+        </mat-error>
+        
+
+    <button mat-button [disabled]="!storeForm.form.valid" type="submit" (click)="saveChanges()" >Save</button>
+
+  </form>
+</mat-card>
+
+
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">close</button>
+   
+  </div>

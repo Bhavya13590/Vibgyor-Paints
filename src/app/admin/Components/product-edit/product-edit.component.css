@@ -1,0 +1,29 @@
+mat-card{
+    align-self: center;
+ }
+ 
+ .form-group{
+     width: 63%;
+ 
+ }
+ 
+ .form-group > input{
+     width:100%;
+ }
+ 
+ button{
+     width: 50%;
+     color: beige;
+     font-weight: bold;
+     background-color: limegreen;
+ }
+ 
+ form{
+     text-align: center;
+ }
+ 
+ .container{
+     width: 60%;
+ }
+ 
+ 

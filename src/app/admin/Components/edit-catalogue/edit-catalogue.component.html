@@ -1,0 +1,28 @@
+<div mat-dialog-content>
+    <mat-card id="est">
+
+<form [formGroup]='catalogueForm' #catForm="ngForm" >
+
+  <input matInput placeholder="Catalogue Type"  class="form-control" formControlName="type" ><br>
+  <mat-error *ngIf="catalogueForm.get('type').touched">
+      <div *ngIf="catalogueForm.controls['type'].hasError('required')" class="alert alert-danger">
+      Catalogue Type is required
+      </div>
+  </mat-error>
+
+    <input matInput placeholder="Image src"  class="form-control" formControlName="image" ><br>
+    <mat-error *ngIf="catalogueForm.get('image').touched">
+        <div *ngIf="catalogueForm.controls['image'].hasError('required')" class="alert alert-danger">
+        Image Source is required
+        </div>
+    </mat-error>
+    <button mat-button [disabled]="!catForm.form.valid" type="submit" (click)="saveCatalogue()" >Save</button>
+
+  </form>
+</mat-card>
+
+
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">close</button>
+   
+  </div>
