@@ -1,0 +1,26 @@
+<div mat-dialog-content>
+    <mat-card id="est">
+        <div class="row">
+            <div class="col-sm-10">
+                <input type="text" class="form-control" placeholder="Enter the Area in Sq ft" [(ngModel)]="area" name="area" required >
+                <button (click)="change()"> Estimate</button>
+            </div>
+            <br>
+            <br>
+            <br>
+            
+           <p> <b>Price of Selected product per litre :</b> {{priceSelected}}</p>
+           <p>  <b>Paint required for 1sq ft :</b> {{paintPerSqft}} litres</p>
+ 
+           <p> <b>Total Volume Required : </b>{{ volume }} litres</p>
+           <p> <b>Estimated Amount in Rs :</b> {{ amount }}</p>
+            
+        </div>
+    </mat-card>
+ 
+ </div>
+
+ <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">close</button>
+   
+  </div>

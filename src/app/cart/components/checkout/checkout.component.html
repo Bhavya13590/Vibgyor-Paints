@@ -1,0 +1,26 @@
+<div class="container">
+  <mat-card>
+
+ <h5>Checkout Details:</h5> 
+
+<form>
+    <input type="text" class="form-control" placeholder="Name" [(ngModel)]="name" name="name" #nameref="ngModel" required>
+    <div *ngIf="nameref.invalid && (nameref.dirty || nameref.touched)" class="alert alert-danger">
+
+        <div *ngIf="nameref.errors.required">
+          Name is required.
+        </div>
+        </div>
+<br>
+        <b>Billing Address:</b>
+        <app-address #billAdd></app-address>
+        <mat-checkbox (change)="copyAddress($event)">Same as above</mat-checkbox> &nbsp;<br>
+        <b>Shipping Address:</b>
+<br>     
+        <app-address #shipAdd></app-address>
+
+        <button type="submit" (click)= "checkout()">Checkout</button>
+</form>
+
+</mat-card>
+</div>

@@ -1,0 +1,23 @@
+
+<div class="container">
+  <div class="row">
+    <div class="cols-md-8">
+    <div class="col-md-3"   *ngFor="let x of productList"  >
+      <mat-card >
+        <img src={{x.image}}>
+        <p style="font-weight:bold"> {{ x.name }}</p>
+        <p style="font-weight:bold"><i class="fa fa-inr" style="font-size:14px"></i> {{x.price}} &nbsp;&nbsp;
+          <!-- Qty: <select name="quantity">
+              <option value="1" selected>1</option>
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="20">20</option>
+          </select> &nbsp;&nbsp; &nbsp; -->
+          <!-- Qty: <input mat-Input type="number" name="quantity" min="1" max="5" [(ngModel)]="qty">  -->
+          &nbsp;&nbsp; &nbsp;<button id ="cart" (click)="addToCart(x)">+cart</button>
+          &nbsp;&nbsp;<button id ="more" (click)="shareDetailsToView(x)">more Info</button></p>
+      </mat-card>
+</div>
+</div>
+</div>
+</div>

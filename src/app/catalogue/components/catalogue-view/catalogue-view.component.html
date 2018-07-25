@@ -1,0 +1,41 @@
+<div class="container">
+
+    <div class="row">
+        <div class="disp" *ngFor="let x of productDetail">
+            <mat-card>
+                <img src="/assets/c3.jpg">
+                <br>    
+                <h3 style="font-weight:bold"> {{ x.name }}</h3>
+                <p>{{ x.description }}</p>
+                <p>{{ x.moreInfo }}</p>
+                <p style="font-weight:bold"><i class="fa fa-inr" style="font-size:14px"></i> {{x.price}}</p>
+                <div class="row">
+                    <div class="col-sm-1">
+                        <h4 id="qt"> Quantity: </h4>
+                    </div>
+                    <div class="col-sm-2">
+                        <mat-select placeholder="Select Quantity" [(value)]="quantity">
+                                <mat-option value="1">1</mat-option>
+                            <mat-option value="2">2</mat-option>
+                            <mat-option value="3">3</mat-option>
+                            <mat-option value="4">4</mat-option>
+                              </mat-select>
+                            
+
+                    </div>
+
+
+                    <div class="col-sm-2">
+
+                        <button mat-raised-button id="fare" (click)="openDialog(x)">Fare Estimator</button>
+
+                    </div>
+                </div>
+                <button id = "add" type="submit" (click) = "addToCartfromView(x)">Add to cart</button>
+
+                <!-- </p>  -->
+            </mat-card>
+</div>
+</div>
+
+</div>

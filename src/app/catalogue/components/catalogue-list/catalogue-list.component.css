@@ -1,0 +1,26 @@
+
+img{
+    width: 100%;
+}
+
+p{
+    font-weight: bold;
+    font-style: italic;
+    font-size: medium;
+    color: crimson;
+}
+
+.disp{
+    display:table-cell;
+    width:0% ;
+}
+    
+.row{
+width: 100%;
+margin: 20px;
+display: table;
+}
+
+mat-card{
+ width : 60%;
+}

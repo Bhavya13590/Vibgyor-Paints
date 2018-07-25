@@ -1,0 +1,11 @@
+<div class="container">
+<div class="row">
+    <div class="disp" *ngFor="let img of catalogueList" >
+        <mat-card  routerLink="products" [queryParams]="{ type: img.type }">
+            <img src={{img.image}} >
+           <p> {{ img.type }}</p> 
+        </mat-card>
+    </div>
+    </div>
+
+  </div>
