@@ -1,0 +1,22 @@
+<header>
+<mat-toolbar> 
+  <img src="/assets/vib.jpg"> <h1>Vibgyor Paints</h1> &nbsp;&nbsp;&nbsp;
+  <form class="img-responsive" [formGroup]="testForm">
+        <input matInput placeholder="Filter" formControlName="searchControl" [matAutocomplete]="autoProd">
+        <mat-autocomplete #autoProd="matAutocomplete">
+          <mat-option *ngFor="let prod of uniqueProductNames" [value]="prod">
+            {{ prod }}
+          </mat-option>
+        </mat-autocomplete>
+        <button type="submit" class="btn" (click)="search()"><span class="glyphicon glyphicon-search"></span></button>
+      </form>
+</mat-toolbar>
+
+</header>
+<app-nav></app-nav>
+
+  
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

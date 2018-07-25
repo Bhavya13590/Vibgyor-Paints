@@ -1,0 +1,53 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a  class="navbar-brand" href="#">Vibgyor Paints</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav" *ngIf="!admin">
+            <li><a  [routerLink]="['/']"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+            <li class="dropdown" >
+                <a  class="dropdown-toggle" data-toggle="dropdown" href="#"><strong>Products</strong>
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a routerLink="catalogue">Catalogue</a></li>
+                    <li><a routerLink="product">Products</a></li>
+                </ul>
+              </li> 
+            
+            <li><a routerLink="about">AboutUs</a></li>
+            <li><a routerLink="contact">ContactUs</a></li>
+            <li><a  routerLink="book">BookAConsultant</a></li>
+            <li><a  routerLink="store"><span class="glyphicon glyphicon-map-marker"></span>StoreLocator</a></li>
+           
+        </ul>
+        <ul class="nav navbar-nav" *ngIf="admin">
+            <li><a routerLink="adminhome"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+            <li><a  routerLink="city">City</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown"  *ngIf="!admin && login">
+                <a  class="dropdown-toggle" data-toggle="dropdown" href="#"><strong>User</strong>
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a  routerLink="profile">Profile</a></li>
+                    <li><a  routerLink="order/history">Your Orders</a></li>
+                    <li><a  routerLink="change">Change Password</a></li>
+                </ul>
+              </li> 
+            
+            <li *ngIf="!admin"><a  routerLink="cart"><span class="glyphicon glyphicon-shopping-cart"></span><span matBadge={{badgeCount}} matBadgeOverlap="false"></span> Cart</a></li>
+          <li *ngIf="!login"><a  routerLink="auth"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+          <li *ngIf="login"><a  routerLink="auth" (click)="logout()"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+    
+
+ 

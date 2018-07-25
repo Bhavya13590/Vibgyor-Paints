@@ -1,0 +1,21 @@
+.container-fluid{
+z-index: 1;
+background-color:crimson;
+width: 100%;
+position: fixed;
+top: 60px;
+}
+
+.navbar-brand{
+font-family: cursive;
+}
+
+
+
+a.active{
+    color : black;
+}
+
+li.active{
+    color:black;
+}
